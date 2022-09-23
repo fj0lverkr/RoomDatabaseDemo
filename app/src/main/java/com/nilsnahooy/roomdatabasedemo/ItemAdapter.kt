@@ -33,7 +33,7 @@ class ItemAdapter(private val items: ArrayList<EmployeeEntity>,
             if(position%2==0){
                 getColor(c, R.color.white)
             }else{
-                getColor(c,com.google.android.material.R.color.material_dynamic_neutral80)
+                getColor(c,R.color.grey)
         })
 
         holder.ivEdit.setOnClickListener {
