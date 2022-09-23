@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RoomDatabaseDemo</string>
+    <string name="lbl_name">Name:</string>
+    <string name="lbl_mail">E-mail:</string>
 </resources>
