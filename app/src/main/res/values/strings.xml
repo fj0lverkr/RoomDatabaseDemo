@@ -5,4 +5,10 @@
     <string name="lbl_button_add">Add Record</string>
     <string name="title_records">All the inserted records.</string>
     <string name="no_records_to_show">No records to show!</string>
+    <string name="colon_space">: </string>
+    <string name="cd_iv_delete">click here to delete the record.</string>
+    <string name="cd_iv_edit">click here to edit the record.</string>
+    <string name="title_dialog_edit">Update Record</string>
+    <string name="lbl_cancel">cancel</string>
+    <string name="lbl_update">update</string>
 </resources>
