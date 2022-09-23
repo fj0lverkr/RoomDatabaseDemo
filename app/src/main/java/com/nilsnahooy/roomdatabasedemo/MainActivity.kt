@@ -2,9 +2,12 @@ package com.nilsnahooy.roomdatabasedemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.nilsnahooy.roomdatabasedemo.databinding.ActivityMainBinding
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +22,13 @@ class MainActivity : AppCompatActivity() {
 
         b?.btnAddRecord?.setOnClickListener{
             addRecord(employeeDao)
+        }
+
+        lifecycleScope.launch {
+            employeeDao.getAllEmployees().collect{
+                val list = ArrayList(it)
+                setupDataList(list, employeeDao)
+            }
         }
     }
 
@@ -37,5 +47,26 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, "Fields cannot be blank.", Toast.LENGTH_LONG)
                 .show()
         }
+    }
+
+    private fun setupDataList(items: ArrayList<EmployeeEntity>, dao: EmployeeDao){
+        if(items.isNotEmpty()){
+            val itemAdapter = ItemAdapter(items, ::updateItem, ::deleteItem)
+            b?.rvRecords?.layoutManager = LinearLayoutManager(this)
+            b?.rvRecords?.adapter = itemAdapter
+            b?.tvNoRecords?.visibility = View.GONE
+            b?.rvRecords?.visibility = View.VISIBLE
+        }else{
+            b?.tvNoRecords?.visibility = View.VISIBLE
+            b?.rvRecords?.visibility = View.GONE
+        }
+    }
+
+    private fun deleteItem(id: Int){
+
+    }
+
+    private fun updateItem(id: Int){
+
     }
 }
