@@ -2,4 +2,7 @@
     <string name="app_name">RoomDatabaseDemo</string>
     <string name="lbl_name">Name:</string>
     <string name="lbl_mail">E-mail:</string>
+    <string name="lbl_button_add">Add Record</string>
+    <string name="title_records">All the inserted records.</string>
+    <string name="no_records_to_show">No records to show!</string>
 </resources>

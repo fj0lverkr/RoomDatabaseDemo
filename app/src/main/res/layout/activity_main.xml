@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="10dp">
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/ll_input_wrapper"
         android:layout_width="match_parent"
@@ -54,4 +55,37 @@
                 android:inputType="textEmailAddress"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
+    <Button
+        android:id="@+id/btn_add_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/lbl_button_add"
+        app:layout_constraintTop_toBottomOf="@id/ll_input_wrapper"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/tv_title_records"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_record"
+        android:text="@string/title_records"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_records"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_records"
+        android:layout_marginTop="15dp" />
+    <TextView
+        android:id="@+id/tv_no_records"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rv_records"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18sp"
+        android:text="@string/no_records_to_show"
+        android:gravity="center" />
 </androidx.constraintlayout.widget.ConstraintLayout>
